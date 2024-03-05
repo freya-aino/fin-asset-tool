@@ -1,10 +1,61 @@
-# stock-analysis-dashboard
+# Stock trader
 
-> [!info] Goal
-> the goal of this project is to provide general, and specific data analysis and extractio on primary (moving averages, volatility, pitchforks) indicators and secondary (news, text based analyses) indicators for stock information.
 
- ## usefull tools
+## [alpaca](https://alpaca.markets/) ([docs](https://alpaca.markets/docs/broker/get-started/))
+- IEX
+- All US stock exchanges for 99$/mo
+- crypto
+- fractional trading
+- US stock exchange
 
- - [pendulum](https://pypi.org/project/pendulum/) for working with different time formats
- - [httpx](https://pypi.org/project/httpx/) for better communication with http endpoints
- - [sqlmodel](https://pypi.org/project/sqlmodel/) for modeling the different datasources as sql friendly types in python
+## [polygon.io](https://polygon.io/docs/stocks/getting-started)
+- options
+- indecies
+- Crypto
+- Forex
+- All US Exchanges
+- all OTC venues
+- 29$/mo for aggregate focused plan
+- 79$/mo for real historical data
+- 15 minutes delayed on payed plan
+- has news
+
+
+## [iex cloud](https://iexcloud.io/)
+
+## [Tradier](https://documentation.tradier.com/brokerage-api/trading/getting-started)
+
+
+# Additional Data
+
+[SEC data](https://www.sec.gov/edgar/sec-api-documentation)
+[CNN Business](https://edition.cnn.com/markets)
+[IMF Data downloader](https://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42&sId=1479329334655)
+[macrotrends](https://www.macrotrends.net/)
+[openinsider](http://openinsider.com/)
+[finhub.io](https://finnhub.io/)
+
+
+# UI
+
+Main page
+
+
+[mask selection (i.e. keywords for constraint)]
+
+[most important news headlines (->News detail view)]
+
+[Global event map]
+
+
+
+News detail view
+
+
+[mask selection (i.e. keywords for constraint)]
+
+[news text] [impact diagram for set of abstract features (like sentiment), (scope derived from ETFs and indices)]
+
+[connected news in the timeline] [impact feature progression in the future (w.r.t. the mask)]
+
+[connected events in the timeline] [event progression in the future]
