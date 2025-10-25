@@ -5,12 +5,6 @@ using Plots
 using Flux
 using SQLite
 
-# ip = IPv4("127.0.0.1")
-# udp_sock = UDPSocket()
-# # msg = String(base64decode(base64encode("shen me")))
-# send(udp_sock, ip, 5666, msg)
-
-
 # define
 gr()
 default(legend = false)
@@ -19,7 +13,7 @@ default(legend = false)
 abstract type SynapsTemplate end
 abstract type NodeTemplate end
 struct StaticSynapsTemplate <: SynapsTemplate
-    init_position::Array{Normal}    
+    init_position::Array{Normal}
     threshold::Real
     init_value::Real
 end
@@ -205,7 +199,7 @@ for (e, (x, y)) in enumerate(zip(X, Y))
                         new_rin_dist = related_node_distance_oi(n, nn)
                         for (crin_i, crin) in enumerate(n.current_related_input_nodes)
                             old_rin_dist = related_node_distance_oi(n, crin)
-                            
+
                             if new_rin_dist < old_rin_dist
                                 n.current_related_input_nodes[crin_i] = nn
                                 break
@@ -218,7 +212,7 @@ for (e, (x, y)) in enumerate(zip(X, Y))
                         new_ron_dist = related_node_distance_io(n, nn)
                         for (cron_i, cron) in enumerate(n.current_related_output_nodes)
                             old_ron_dist = related_node_distance_io(n, cron)
-                            
+
                             if new_ron_dist < old_ron_dist
                                 n.current_related_output_nodes[cron_i] = nn
                                 break
@@ -268,7 +262,7 @@ for (e, (x, y)) in enumerate(zip(X, Y))
         end
     end
 
-    
+
     # convergence_speed = 0.02
     # stabalisation_speed = 0.02
     # temperature = 0.0
@@ -276,7 +270,7 @@ for (e, (x, y)) in enumerate(zip(X, Y))
     # for n in all_nodes
     #     closest_node_relative = n.current_related_input_nodes[1]
     #     input_synaps_mean = mean([s.position for s in n.input_synapses])
-        
+
     #     for s in n.input_synapses
     #         closest_synaps_relative = sort(closest_node_relative.output_synapses, by = x -> rmse(x.position, s.position))[1]
     #         convergence_vector = convergence_speed * (closest_synaps_relative.position - s.position)
@@ -286,7 +280,7 @@ for (e, (x, y)) in enumerate(zip(X, Y))
     #     end
     # end
 
-    
+
     # visualize
 
     println("---------------------------------------------------------")
@@ -322,7 +316,7 @@ end
 # mutable struct Neuron
 #     input::Array{Float32, 2}
 #     active_state_matrix::Array{Float32, 2}
-    
+
 #     output::Array{Float32, 2}
 
 #     function Neuron(input_dim, num_input_nodes, input_seq_len)
@@ -368,9 +362,9 @@ end
 # # # end
 
 # # function activate(N::Neuron, x; activation_range = 1.)
-    
+
 # #     for n in size(N.input_nodes, 1)
-# #         for 
+# #         for
 # #     I = [activate(n, x, activation_range = activation_range) for n in N.input_nodes]
 # #     P = mean(I) * w
 # #     return (N.output_node, P)
@@ -467,15 +461,15 @@ end
 
 #     # then, outside the function,
 #     # check all predictions against each other
-#     # and check all reconstructions 
+#     # and check all reconstructions
 #     # to evaluate a good trading opportulity
-    
+
 #     # REMEMBER TO SELF: this is not to extract
 #     # relevant meta information and making predictions
 #     # that adhere to mean regression
-#     # but an attempt to directly predict chaos. 
+#     # but an attempt to directly predict chaos.
 
-# # v1 
+# # v1
 
 
 
@@ -498,7 +492,7 @@ end
 #     # "prior"
 #     prior = decoder_h(i_d_z)
 
-    
+
 #     # "posterior"
 #     h_from_d_and_h = decoder_dh_h(u_h, i_h, u_d, i_d)
 
